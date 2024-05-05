@@ -31,6 +31,15 @@ function showSuccess(input)
     const formControl = input.parentElement;
     formControl.className = 'form-control success';
 }
+const validateEmail = (email) =>
+{
+    return String(email)
+        .toLowerCase()
+        .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+};
+
 form.addEventListener('submit', function (e)
 {
     e.preventDefault();
@@ -53,11 +62,19 @@ form.addEventListener('submit', function (e)
     }
     if (userEmail.value == '')
     {
-        showError(userEmail, 'username is required');
+        showError(userEmail, 'user mail is required');
     }
     else
     {
-        showSuccess(userEmail);
+        if (validateEmail(userEmail.value))
+        {
+            showSuccess(userEmail);
+        }
+        else
+        {
+            showError(userEmail, 'Not valid email');
+        }
+
     }
     if (confirmPassword.value == '')
     {
