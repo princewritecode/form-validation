@@ -6,12 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form validator</title>
     <link rel="stylesheet" href="style.css">
+
+
 </head>
 
 <body>
     <div class="container">
         <form id="form" class="form">
-
+            <h2>Register with us</h2>
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="enter username">
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="enter email">
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="password">password</label>
+                <input type="password" id="password" placeholder="enter password">
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="confirm-password">Confirm password</label>
+                <input type="password" id="confirm-password" placeholder="enter password again">
+                <small>Error message</small>
+            </div>
+            <button id="button" type="submit">submit</button>
         </form>
     </div>
     <script src="script.js"></script>
